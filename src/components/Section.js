@@ -2,10 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 
 
-const Section = ({ title, description, leftBtnText, rightBtnText })=> {
+const Section = ({ title, description, leftBtnText, rightBtnText, backgroundImg })=> {
   // console.log(props)
   return (
-    <Sections>
+    <Sections bgImg = { backgroundImg }>
       <HeroText>
         <h1>{ title }</h1>
         <p>{ description }</p>
@@ -14,7 +14,10 @@ const Section = ({ title, description, leftBtnText, rightBtnText })=> {
       <Buttons>
         <ButtonGroup>
           <LButton>{ leftBtnText }</LButton>
-          <RButton>{ rightBtnText }</RButton>
+          { rightBtnText &&
+            <RButton>{ rightBtnText }</RButton>
+          }
+
         </ButtonGroup>
 
         <DownArrow src = './images/down-arrow.svg'/>
@@ -34,11 +37,12 @@ const Sections = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  background-image: ${ props => `url('/images/${ props.bgImg }')`};
 
 `
 const HeroText = styled.div`
   color: red;
-  // background-color: red ;
+  // background-color: red ;1
   padding: 15vh;
 `
 
@@ -53,7 +57,7 @@ const ButtonGroup =styled.div`
 `
 
 const LButton = styled.div`
-  background-color: rgba(23, 26, 32); 
+  background-color: rgba(23, 26, 32, 0.85); 
   margin: 0 1.3rem;
   height: 48px;
   width:256px;
@@ -62,7 +66,7 @@ const LButton = styled.div`
   justify-content: center;
   align-items: center;   
   border-radius: 100px;
-  // opacity: 0.85; 
+  opacity: 0.75; 
   text-transform: uppercase;
   font-size: 12px ;
   cursor: pointer;
