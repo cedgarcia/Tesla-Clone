@@ -38,11 +38,13 @@ const Sections = styled.div`
   justify-content: space-between;
   align-items: center;
   background-image: ${ props => `url('/images/${ props.bgImg }')`};
+  z-index: 2;
 
 `
 const HeroText = styled.div`
   color: red;
-  // background-color: red ;1
+  // background-color: red ;
+  text-align: center;
   padding: 15vh;
 `
 
@@ -73,6 +75,7 @@ const LButton = styled.div`
   @media(max-width: 768px) {
     margin-bottom: 1rem; 
   }
+  z-index: 2;
 `
 const RButton = styled(LButton)`
   background-color: white;
@@ -84,9 +87,11 @@ const DownArrow = styled.img`
   margin-top:1rem;
   height: 40px;
   animation: animateDown infinite 1.5s;
+  width: 100%;
 
 `
 
 const Buttons = styled.div`
   margin-bottom: 1rem;
+  z-index: 1;
 `
