@@ -37,7 +37,7 @@ const Sections = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-image: ${ props => `url('/images/${ props.bgImg }')`};
+  background-image: ${ props => `url('./images/${ props.bgImg }')`};
   z-index: 2;
 
 `
